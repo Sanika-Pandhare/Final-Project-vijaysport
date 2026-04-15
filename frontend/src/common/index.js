@@ -1,4 +1,5 @@
-const backendDomin = "http://localhost:8080";
+// const backendDomin = "http://localhost:8080";   dev 
+const backendDomin = "https://final-project-vijaysport.onrender.com"; 
 
 const SummaryApi = {
   signUP: {
