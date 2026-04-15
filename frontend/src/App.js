@@ -175,29 +175,45 @@ function App() {
   const dispatch = useDispatch()
   const [cartProductCount,setCartProductCount] = useState(0)
 
-  const fetchUserDetails = async()=>{
-      const dataResponse = await fetch(SummaryApi.current_user.url,{
-        method : SummaryApi.current_user.method,
-        credentials : 'include'
-      })
+  const fetchUserDetails = async () => {
+  try {
+    const dataResponse = await fetch(SummaryApi.current_user.url, {
+      method: SummaryApi.current_user.method,
+      credentials: "include"
+    });
 
-      const dataApi = await dataResponse.json()
+    const dataApi = await dataResponse.json();
 
-      if(dataApi.success){
-        dispatch(setUserDetails(dataApi.data))
-      }
+    console.log("User API:", dataApi); // 🔥 DEBUG
+
+    if (dataApi.success) {
+      dispatch(setUserDetails(dataApi.data));
+    } else {
+      dispatch(setUserDetails(null)); // 🔥 IMPORTANT
+    }
+
+  } catch (err) {
+    console.error("User fetch error:", err);
+    dispatch(setUserDetails(null));
   }
+};
 
-  const fetchUserAddToCart = async()=>{
-    const dataResponse = await fetch(SummaryApi.addToCartProductCount.url,{
-      method : SummaryApi.addToCartProductCount.method,
-      credentials : 'include'
-    })
+ const fetchUserAddToCart = async () => {
+  try {
+    const dataResponse = await fetch(SummaryApi.addToCartProductCount.url, {
+      method: SummaryApi.addToCartProductCount.method,
+      credentials: "include"
+    });
 
-    const dataApi = await dataResponse.json()
+    const dataApi = await dataResponse.json();
 
-    setCartProductCount(dataApi?.data?.count)
+    setCartProductCount(dataApi?.data?.count || 0);
+
+  } catch (err) {
+    console.error("Cart count error:", err);
+    setCartProductCount(0);
   }
+};
 
   useEffect(()=>{
     fetchUserDetails()

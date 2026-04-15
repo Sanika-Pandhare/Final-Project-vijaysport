@@ -99,11 +99,19 @@ async function userSignInController(req,res){
                 { expiresIn: "8h" }
             )
 
-            // 🔥 FIXED COOKIE
+            // // 🔥 FIXED COOKIE
+            // res.cookie("token", token, {
+            //     httpOnly: true,
+            //     secure: false,      // ✅ FIX
+            //     sameSite: "lax"     // ✅ IMPORTANT
+            // })
+
+            // dev
+             // 🔥 FIXED COOKIE
             res.cookie("token", token, {
                 httpOnly: true,
-                secure: false,      // ✅ FIX
-                sameSite: "lax"     // ✅ IMPORTANT
+                secure: true,      // ✅ FIX
+                sameSite: "None"     // ✅ IMPORTANT
             })
 
             res.status(200).json({
