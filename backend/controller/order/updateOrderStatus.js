@@ -1,3 +1,4 @@
+const orderModel = require("../../models/orderModel.js");
 const updateOrderStatus = async (req, res) => {
   try {
     const { orderId, status } = req.body;

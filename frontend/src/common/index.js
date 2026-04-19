@@ -1,5 +1,9 @@
 // const backendDomin = "http://localhost:8080";   dev 
-const backendDomin = "https://final-project-vijaysport.onrender.com"; 
+// const backendDomin = "https://final-project-vijaysport.onrender.com"; 
+const backendDomin = process.env.REACT_APP_URL;
+
+console.log("backendDomin :",backendDomin);
+
 
 const SummaryApi = {
   signUP: {

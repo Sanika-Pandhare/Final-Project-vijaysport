@@ -1,3 +1,5 @@
+const orderModel = require("../../models/orderModel.js");
+
 const getAllOrders = async (req, res) => {
   try {
     const orders = await orderModel
@@ -5,6 +7,8 @@ const getAllOrders = async (req, res) => {
       .sort({ createdAt: -1 })
       .populate("userId")
       .populate("products.productId");
+
+    console.log("orders data : ", orders);
 
     res.json({ success: true, data: orders });
 

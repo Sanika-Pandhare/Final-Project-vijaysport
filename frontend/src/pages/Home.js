@@ -13,13 +13,13 @@ const Home = () => {
       <BannerProduct/>
 
       <HorizontalCardProduct category={"Cricket"} heading={"Top's Cricket"}/>
-      <HorizontalCardProduct category={"Athletics"} heading={"Popular's Athletics"}/>
+      {/* <HorizontalCardProduct category={"Athletics"} heading={"Popular's Athletics"}/> */}
 
-      <VerticalCardProduct category={"Training"} heading={"Training"}/>
+      {/* <VerticalCardProduct category={"Training"} heading={"Training"}/> */}
       <VerticalCardProduct category={"Boxing"} heading={"Boxing"}/>
-      <VerticalCardProduct category={"Indoor Games"} heading={"Indoor Games"}/>
+      {/* <VerticalCardProduct category={"Indoor Games"} heading={"Indoor Games"}/> */}
       <VerticalCardProduct category={"Fitness"} heading={"Fitness"}/>
-      <VerticalCardProduct category={"Team Sports"} heading={"Team Sports"}/>
+      <VerticalCardProduct category={"Team Sport"} heading={"Team Sports"}/>
       <VerticalCardProduct category={"Accessories"} heading={"Accessories"}/>
        <VerticalCardProduct category={"Boys Shoes"} heading={"Boys Shoes"}/>
         <VerticalCardProduct category={"Boys Clothes"} heading={"Boys Clothes"}/>

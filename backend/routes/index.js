@@ -43,7 +43,7 @@ const updateOrderStatus = require("../controller/order/updateOrderStatus.js")
 router.post("/create-order", authToken, createOrder);
 router.post("/verify-payment", authToken, verifyPayment);
 router.get("/my-orders", authToken, getUserOrders);
-router.get("/all-orders", authToken, getAllOrders);
+router.get("/all-orders", getAllOrders);
 router.put("/update-order-status", authToken, updateOrderStatus);
 
 router.post("/signup",userSignUpController)
